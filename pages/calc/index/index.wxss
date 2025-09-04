@@ -1,0 +1,69 @@
+.container {
+  background: black;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 顶部显示区 */
+.top {
+  text-align: right;
+  padding: 40rpx 30rpx;
+}
+.expression {
+  font-size: 40rpx;
+  color: #a5a5a5;
+  margin-bottom: 10rpx;
+}
+.result {
+  font-size: 100rpx;
+  color: white;
+  font-weight: 300;
+}
+
+/* 按钮区 */
+.row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10rpx 0;
+  padding: 0 15rpx;
+}
+
+/* 按钮基础样式 */
+.btn {
+  width: 140rpx;        /* 固定宽度 */
+  height: 140rpx;       /* 固定高度 */
+  border-radius: 70rpx; /* 圆形 */
+  font-size: 42rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5rpx;
+}
+
+/* 颜色分类 */
+/* 灰色按钮 */
+.gray { background: #a5a5a5; color: black; }
+.gray:active { background: #d9d9d9; }  /* 按下时变亮 */
+
+/* 深色按钮 */
+.dark { background: #333333; color: white; }
+.dark:active { background: #666666; }   /* 按下时变浅 */
+
+/* 橙色按钮 */
+.orange { background: #ff9500; color: white; }
+.orange:active { background: #ffa733; } /* 按下时更亮 */
+
+
+/* 0 按钮：宽度翻倍 */
+.zero {
+  width: 250rpx;
+  border-radius: 70rpx;
+  justify-content: flex-start;
+  padding-left: 40rpx;
+}
+

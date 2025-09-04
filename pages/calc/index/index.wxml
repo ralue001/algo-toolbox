@@ -1,0 +1,42 @@
+<view class="container">
+  <!-- 显示区 -->
+  <view class="top">
+    <view class="expression">{{expression}}</view>
+    <view class="result">{{current || 0}}</view>
+  </view>
+
+  <!-- 按钮区 -->
+  <view class="row">
+    <view class="btn gray" bindtap="clear">AC</view>
+    <view class="btn gray" bindtap="toggleSign">+/-</view>
+    <view class="btn gray" bindtap="percent">%</view>
+    <view class="btn orange" bindtap="operate" data-op="÷">÷</view>
+  </view>
+
+  <view class="row">
+    <view class="btn dark" bindtap="inputNum" data-num="7">7</view>
+    <view class="btn dark" bindtap="inputNum" data-num="8">8</view>
+    <view class="btn dark" bindtap="inputNum" data-num="9">9</view>
+    <view class="btn orange" bindtap="operate" data-op="×">×</view>
+  </view>
+
+  <view class="row">
+    <view class="btn dark" bindtap="inputNum" data-num="4">4</view>
+    <view class="btn dark" bindtap="inputNum" data-num="5">5</view>
+    <view class="btn dark" bindtap="inputNum" data-num="6">6</view>
+    <view class="btn orange" bindtap="operate" data-op="-">-</view>
+  </view>
+
+  <view class="row">
+    <view class="btn dark" bindtap="inputNum" data-num="1">1</view>
+    <view class="btn dark" bindtap="inputNum" data-num="2">2</view>
+    <view class="btn dark" bindtap="inputNum" data-num="3">3</view>
+    <view class="btn orange" bindtap="operate" data-op="+">+</view>
+  </view>
+
+  <view class="row">
+    <view class="btn dark zero" bindtap="inputNum" data-num="0">0</view>
+    <view class="btn dark" bindtap="dot">.</view>
+    <view class="btn orange" bindtap="calculate">=</view>
+  </view>
+</view>

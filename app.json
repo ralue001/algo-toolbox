@@ -1,0 +1,11 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/calc/index/index"
+  ],
+  "window": {
+    "navigationBarTitleText": "算法器工具箱",
+    "navigationBarBackgroundColor": "#ffffff",
+    "navigationBarTextStyle": "black"
+  }
+}
