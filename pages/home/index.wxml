@@ -2,6 +2,6 @@
   <view class="title">算法器工具箱</view>
 
   <button type="primary" bindtap="goCalc">普通计算器</button>
-  <button type="default" style="margin-top:20rpx;" bindtap="comingSoon">房贷计算（未实现）</button>
+  <button type="default" style="margin-top:20rpx;" bindtap="goMortgage">房贷计算</button>
   <button type="default" style="margin-top:20rpx;" bindtap="comingSoon">个税计算（未实现）</button>
 </view>

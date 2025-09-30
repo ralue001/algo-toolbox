@@ -1,7 +1,9 @@
 {
   "pages": [
     "pages/home/index",
-    "pages/calc/index/index"
+    "pages/calc/index/index",
+    "pages/mortgage/index/index",
+    "pages/tax/index/index"
   ],
   "window": {
     "navigationBarTitleText": "算法器工具箱",

@@ -1,0 +1,86 @@
+<view class="page">
+  <view class="card">
+    <view class="row">
+      <text class="label">贷款金额(万元)</text>
+      <input class="ipt" type="digit" placeholder="如 100" bindinput="onLoan" value="{{loanWan}}" />
+    </view>
+
+    <view class="row">
+      <text class="label">贷款年限</text>
+      <picker mode="selector" range="{{yearsOptions}}" value="{{yearsIndex}}" bindchange="onYearsChange">
+        <view class="picker">{{yearsOptions[yearsIndex]}} 年</view>
+      </picker>
+    </view>
+
+    <view class="row">
+      <text class="label">年利率(%)</text>
+      <input class="ipt" type="digit" placeholder="如 4.20" bindinput="onRate" value="{{ratePercent}}" />
+    </view>
+
+    <view class="row">
+      <text class="label">还款方式</text>
+      <radio-group class="radios" bindchange="onMethodChange">
+        <label class="radio">
+          <radio value="bx" checked="{{method==='bx'}}" /> 等额本息
+        </label>
+        <label class="radio">
+          <radio value="bj" checked="{{method==='bj'}}" /> 等额本金
+        </label>
+      </radio-group>
+    </view>
+
+    <view class="btns">
+      <button type="primary" bindtap="calc">开始计算</button>
+      <button style="margin-left:20rpx" bindtap="reset">重置</button>
+    </view>
+  </view>
+
+  <view wx:if="{{done}}" class="card">
+    <view class="result-title">计算结果（{{method==='bx' ? '等额本息' : '等额本金'}}）</view>
+
+    <view wx:if="{{method==='bx'}}">
+      <view class="kv"><text>月供</text><text class="v">{{monthly}} 元</text></view>
+      <view class="kv"><text>总利息</text><text class="v">{{totalInterest}} 元</text></view>
+      <view class="kv"><text>本息合计</text><text class="v">{{totalPay}} 元</text></view>
+    </view>
+
+    <view wx:if="{{method==='bj'}}">
+      <view class="kv"><text>首月月供</text><text class="v">{{firstMonth}} 元</text></view>
+      <view class="kv"><text>每月递减</text><text class="v">{{decreasePerMonth}} 元</text></view>
+      <view class="kv"><text>总利息</text><text class="v">{{totalInterest}} 元</text></view>
+      <view class="kv"><text>本息合计</text><text class="v">{{totalPay}} 元</text></view>
+    </view>
+  </view>
+
+  <view wx:if="{{schedule.length}}" class="card">
+  <view class="result-title">还款明细（共 {{totalPeriods}} 期）</view>
+
+  <view class="thead">
+    <text class="th c1">期数</text>
+    <text class="th c2">月供</text>
+    <text class="th c2">本金</text>
+    <text class="th c2">利息</text>
+    <text class="th c2">剩余本金</text>
+  </view>
+
+  <block wx:for="{{displaySchedule}}" wx:key="i">
+    <view class="trow">
+      <text class="c1">{{item.i}}</text>
+      <text class="c2">{{item.pay}}</text>
+      <text class="c2">{{item.principal}}</text>
+      <text class="c2">{{item.interest}}</text>
+      <text class="c2">{{item.remain}}</text>
+    </view>
+  </block>
+
+  <view class="toggle" wx:if="{{schedule.length > 12}}" bindtap="toggleShowAll">
+    {{ showAll ? '只看前 12 期' : '展开全部（'+totalPeriods+' 期）' }}
+  </view>
+
+  <!-- 导出 / 复制按钮 -->
+  <view class="export-row">
+    <button type="primary" size="mini" bindtap="exportCSV">导出 CSV</button>
+    <button size="mini" bindtap="copyCSV">复制 CSV 内容</button>
+  </view>
+</view>
+</view>
