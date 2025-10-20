@@ -1,3 +1,4 @@
 {
-  "usingComponents": {}
+  "navigationBarTitleText": "个税计算",
+  "navigationStyle": "default"
 }

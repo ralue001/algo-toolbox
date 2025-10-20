@@ -1,12 +1,13 @@
 Page({
-  goCalc() {
-    wx.navigateTo({ url: '/pages/calc/index/index' })
-  },
-  goMortgage() {
-    wx.navigateTo({ url: '/pages/mortgage/index/index' })
-  },
-  comingSoon() {
-    wx.showToast({ title: '功能开发中', icon: 'none' })
+  data: { selected: '' },
+
+  // 通用点击：先高亮，再跳转
+  tapTile(e) {
+    const { id, url } = e.currentTarget.dataset
+    this.setData({ selected: id })
+    // 给 120ms 视觉反馈时间
+    setTimeout(() => {
+      wx.navigateTo({ url })
+    }, 120)
   }
 })
-

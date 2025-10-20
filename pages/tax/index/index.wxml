@@ -43,10 +43,10 @@
 
   <view wx:if="{{monthDone}}" class="card">
     <view class="title">月度结果</view>
-    <view class="kv"><text>应纳税所得额</text><text class="v">{{taxable}} 元</text></view>
-    <view class="kv"><text>适用税率</text><text class="v">{{(rate*100).toFixed(0)}}%（速算扣除数 {{quick}}）</text></view>
-    <view class="kv"><text>本月个税</text><text class="v">{{tax}} 元</text></view>
-    <view class="kv"><text>税后到手</text><text class="v">{{after}} 元</text></view>
+    <view class="kv"><text>应纳税所得额</text><text class="v">{{taxableStr}} 元</text></view>
+    <view class="kv"><text>适用税率</text><text class="v">{{ratePercent}}%（速算扣除数 {{quick}}）</text></view>
+    <view class="kv"><text>本月个税</text><text class="v">{{taxStr}} 元</text></view>
+    <view class="kv"><text>税后到手</text><text class="v">{{afterStr}} 元</text></view>
   </view>
 
   <view class="card">
@@ -64,16 +64,16 @@
     <view class="title">年终奖结果</view>
 
     <view class="subTitle">方案A：单独计税（年终奖÷12确定税率）</view>
-    <view class="kv"><text>适用税率</text><text class="v">{{(bonusRateA*100).toFixed(0)}}%（速算 {{bonusQuickA}}）</text></view>
-    <view class="kv"><text>年终奖个税</text><text class="v">{{bonusTaxA}} 元</text></view>
-    <view class="kv"><text>到手金额</text><text class="v">{{bonusAfterA}} 元</text></view>
+    <view class="kv"><text>适用税率</text><text class="v">{{bonusRateAPercent}}%（速算 {{bonusQuickA}}）</text></view>
+    <view class="kv"><text>年终奖个税</text><text class="v">{{bonusTaxAStr}} 元</text></view>
+    <view class="kv"><text>到手金额</text><text class="v">{{bonusAfterAStr}} 元</text></view>
 
     <view class="divider"></view>
 
     <view class="subTitle">方案B：并入当月工资计税（与工资合并后计算差额）</view>
-    <view class="kv"><text>并入额外个税</text><text class="v">{{bonusTaxB}} 元</text></view>
-    <view class="kv"><text>到手金额</text><text class="v">{{bonusAfterB}} 元</text></view>
+    <view class="kv"><text>并入额外个税</text><text class="v">{{bonusTaxBStr}} 元</text></view>
+    <view class="kv"><text>到手金额</text><text class="v">{{bonusAfterBStr}} 元</text></view>
 
-    <view class="tips">注：税率表按当前常见口径（3%~45%，速算扣除 0/210/1410/2660/4410/7160/15160）。政策可能调整，请以税务机关口径为准。</view>
+    <view class="tips">注：税率表按常见口径（3%~45%，速算扣除 0/210/1410/2660/4410/7160/15160）。政策可能调整，请以税务机关口径为准。</view>
   </view>
 </view>

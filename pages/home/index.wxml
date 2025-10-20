@@ -1,7 +1,42 @@
-<view class="container">
-  <view class="title">算法器工具箱</view>
+<view class="page">
+  <!-- 顶部横幅：居中 -->
+  <view class="hero">
+    <view class="hero-title">算法器工具箱</view>
+    <view class="hero-sub">常用计算 · 简洁好用</view>
+  </view>
 
-  <button type="primary" bindtap="goCalc">普通计算器</button>
-  <button type="default" style="margin-top:20rpx;" bindtap="goMortgage">房贷计算</button>
-  <button type="default" style="margin-top:20rpx;" bindtap="comingSoon">个税计算（未实现）</button>
+  <!-- 功能卡片：点击哪个就高亮哪个 -->
+  <view class="grid">
+    <view class="tile {{selected==='calc' ? 'active' : ''}}"
+          hover-class="pressed"
+          data-id="calc"
+          data-url="/pages/calc/index/index"
+          bindtap="tapTile">
+      <view class="i">🧮</view>
+      <view class="name">普通计算器</view>
+      <view class="desc">四则运算 / 历史记录</view>
+    </view>
+
+    <view class="tile {{selected==='mortgage' ? 'active' : ''}}"
+          hover-class="pressed"
+          data-id="mortgage"
+          data-url="/pages/mortgage/index/index"
+          bindtap="tapTile">
+      <view class="i">🏠</view>
+      <view class="name">房贷计算</view>
+      <view class="desc">等额本息 / 等额本金</view>
+    </view>
+
+    <view class="tile {{selected==='tax' ? 'active' : ''}}"
+          hover-class="pressed"
+          data-id="tax"
+          data-url="/pages/tax/index/index"
+          bindtap="tapTile">
+      <view class="i">💼</view>
+      <view class="name">个税计算</view>
+      <view class="desc">工资 & 年终奖</view>
+    </view>
+  </view>
+
+  <view class="footer">© 2025 算法器工具箱</view>
 </view>
